@@ -1,0 +1,133 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('file:///E:/images/header.webp') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.header img {
+    height: 100px; 
+    width: auto; 
+    max-height: 100%; 
+    margin-right: 15px;
+}
+
+
+.header {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#List_1 {
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    padding: 0;
+    gap: 15px; 
+}
+
+li a {
+    padding: 10px 20px;
+    text-decoration: none;
+    display: flex;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+li a:hover {
+    background-color: rgb(9, 39, 53);
+    color: aliceblue;
+    border-radius: 5px;
+}
+
+.footer {
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer a {
+    color: lightblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: cyan;
+    text-decoration: underline;
+}
+
+.players-table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: min(90%, 800px); 
+    margin: 40px auto;
+    text-align: center;
+}
+
+.players-table h2 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+
+table {
+    display: block; 
+    width: 100%;
+    overflow-x: auto; 
+    border-collapse: collapse;
+    background-color: white;
+}
+
+th, td {
+    border: 2px solid black;
+    padding: clamp(6px, 1.5vw, 12px); 
+    text-align: center;
+    font-size: clamp(12px, 2vw, 18px); 
+}
+
+th {
+    background-color: black;
+    color: white;
+    font-size: 1.2rem;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+    transition: 0.3s;
+}
+
+table {
+    max-width: 100%;
+    width: 100%;
+    white-space: nowrap; 
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: justify;
+    max-width: 900px;
+    margin: auto;
+}
+
+.content, .players-table, .footer {
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 20px;
+    border-radius: 10px;
+}
