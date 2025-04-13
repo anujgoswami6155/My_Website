@@ -1,24 +1,45 @@
+/* === Global Styles === */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('file:///E:/images/chessboard.jpg') no-repeat center center fixed;
+    background: #000 url('file:///E:/images/chessboard.JPG') no-repeat center center fixed;
     background-size: cover;
 }
 
+/* === Grid Container === */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "content"
+        "players"
+        "footer";
+    gap: 20px;
+    max-width: 100%;
+}
+
+/* === Header === */
 .header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
     background-color: black;
     color: white;
     padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
+    gap: 20px;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .header img {
     height: 80px;
     width: auto;
-    margin-right: 15px;
 }
 
 nav ul {
@@ -26,6 +47,8 @@ nav ul {
     list-style: none;
     padding: 0;
     gap: 20px;
+    justify-content: flex-end;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -42,12 +65,24 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+/* === Shared Section Styles === */
 .content, .players-table, .footer {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
     max-width: 900px;
-    margin: 20px auto;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* === Content Area === */
+.content {
+    grid-area: content;
+}
+
+/* === Players Table === */
+.players-table {
+    grid-area: players;
 }
 
 .table-container {
@@ -76,12 +111,17 @@ tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-tr:hover {
-    background-color: #ddd;
-    transition: 0.3s;
+tr {
+    transition: background-color 0.3s ease;
 }
 
+tr:hover {
+    background-color: #ddd;
+}
+
+/* === Footer === */
 .footer {
+    grid-area: footer;
     text-align: center;
     color: black;
 }
@@ -96,16 +136,15 @@ tr:hover {
     color: cyan;
 }
 
+/* === Responsive Layout === */
 @media screen and (max-width: 1024px) {
     .header {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        justify-content: center;
     }
 }
 
@@ -113,32 +152,35 @@ tr:hover {
     .header {
         padding: 10px;
     }
+
     .header img {
         height: 60px;
     }
+
     .content, .players-table, .footer {
         width: 90%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .header {
-        flex-direction: column;
-    }
-    
     nav ul {
         flex-direction: column;
-        text-align: center;
         padding: 0;
     }
-    
+
     nav ul li a {
         display: block;
         padding: 8px;
         width: 100%;
         text-align: center;
     }
-    
+
     .content, .players-table, .footer {
         padding: 15px;
     }
